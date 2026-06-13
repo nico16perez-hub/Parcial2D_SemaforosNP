@@ -1,0 +1,53 @@
+# === Archivos de compilación (Ant) ===
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+*.class
+
+# === NetBeans ===
+/nbproject/private/
+/nbproject/*-private.xml
+.nb-gradle/
+
+# === Maven ===
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# === Gradle ===
+.gradle/
+build/
+
+# === Spring Tool Suite (STS) ===
+.apt_generated
+.factorypath
+.project
+.classpath
+.settings
+.springBeans
+.sts4-cache
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# === Eclipse ===
+.project
+.classpath
+.settings/
+bin/
+
+# === VS Code ===
+.vscode/
+
+# === Archivos temporales del sistema ===
+*.log
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
