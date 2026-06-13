@@ -1,25 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.parcial2d_semaforos;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class SEMAFORO {
+public class Semaforo {
     private int nro;
     private String estado;
     private String ubicacion;
     private String tipoCorriente;
-    private List<LUZ> luces;
-    private List<DENUNCIA> historicoDenuncias;
+    private List<Luz> luces;
+    private List<Denuncia> historicoDenuncias;
 
-    public SEMAFORO(int nro, String estado, String ubicacion, String tipoCorriente) {
+    public Semaforo(int nro, String estado, String ubicacion, String tipoCorriente) {
         this.nro = nro;
         this.estado = estado;
         this.ubicacion = ubicacion;
@@ -29,19 +21,31 @@ public class SEMAFORO {
         this.crearLuces();
     }
 
-    public void crearLuces() {
-        luces.add(new LUZ("LS001", "Philips", "LED", "Rojo"));
-        luces.add(new LUZ("LS002", "Philips", "LED", "Amarillo"));
-        luces.add(new LUZ("LS003", "Philips", "LED", "Verde"));
+    public List<Denuncia> getHistoricoDenuncias() {
+        return historicoDenuncias;
     }
 
-    public void addDenuncia(DENUNCIA denuncia) {
+    public void crearLuces() {
+        luces.add(new Luz("LS001", "Philips", "LED", "Rojo"));
+        luces.add(new Luz("LS002", "Philips", "LED", "Amarillo"));
+        luces.add(new Luz("LS003", "Philips", "LED", "Verde"));
+    }
+
+    public void addDenuncia(Denuncia denuncia) {
         this.historicoDenuncias.add(denuncia);
     }
 
-    public List<LUZ> getLuces() { return luces; }
-    public LUZ getLuz(int posicion) { return luces.get(posicion); }
-    
+    public List<Luz> getLuces() {
+        return luces;
+    }
+
+    public Luz getLuz(int posicion) {
+        if (posicion >= 0 && posicion < luces.size()) {
+            return luces.get(posicion);
+        }
+        return null;
+    }
+
     public int contarDenuncias() {
         return historicoDenuncias.size();
     }
@@ -50,7 +54,23 @@ public class SEMAFORO {
         return "Descompuesto".equalsIgnoreCase(this.estado);
     }
 
-    public int getNro() { return nro; }
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
-}
+    public int getNro() {
+        return nro;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public String getTipoCorriente() {
+        return tipoCorriente;
+    }
+}   

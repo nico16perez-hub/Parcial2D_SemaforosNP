@@ -18,9 +18,9 @@ public class Parcial2D_Semaforos {
         
        
         System.out.println("1️ CREANDO SEMÁFOROS...");
-        SEMAFORO semaforo1 = new SEMAFORO(1, "Descompuesto", "Av. San Martín y Córdoba", "Led");
-        SEMAFORO semaforo2 = new SEMAFORO(2, "Activo", "Av. Libertador y 9 de Julio", "Faros");
-        SEMAFORO semaforo3 = new SEMAFORO(3, "Descompuesto", "Calle Rivadavia y Sarmiento", "Led");
+        Semaforo semaforo1 = new Semaforo(1, "Descompuesto", "Av. San Martín y Córdoba", "Led");
+        Semaforo semaforo2 = new Semaforo(2, "Activo", "Av. Libertador y 9 de Julio", "Faros");
+        Semaforo semaforo3 = new Semaforo(3, "Descompuesto", "Calle Rivadavia y Sarmiento", "Led");
         
         System.out.println("✓ Semáforo 1 creado - Estado: " + semaforo1.getEstado());
         System.out.println("✓ Semáforo 2 creado - Estado: " + semaforo2.getEstado());
@@ -34,8 +34,8 @@ public class Parcial2D_Semaforos {
         
      
         System.out.println("\n  REGISTRANDO PERSONAS DENUNCIANTES...");
-        PERSONA persona1 = new PERSONA("María González", "maria.gonzalez@email.com");
-        PERSONA persona2 = new PERSONA("Carlos Rodríguez", "carlos.rodriguez@email.com");
+        Persona persona1 = new Persona("María González", "maria.gonzalez@email.com");
+        Persona persona2 = new Persona("Carlos Rodríguez", "carlos.rodriguez@email.com");
         
         System.out.println("✓ Persona registrada: " + persona1.getNombre());
         System.out.println("✓ Persona registrada: " + persona2.getNombre());
@@ -44,7 +44,7 @@ public class Parcial2D_Semaforos {
         
     
         System.out.println("\n--- ESCENARIO A: Denuncia de semáforo descompuesto ---");
-        DENUNCIA denuncia1 = persona1.registrarDenuncia(
+        Denuncia denuncia1 = persona1.registrarDenuncia(
             semaforo1, 
             "No funciona la luz roja", 
             "Alta", 
@@ -57,7 +57,7 @@ public class Parcial2D_Semaforos {
         System.out.println("  Total denuncias del semáforo 1: " + semaforo1.contarDenuncias());
         
 
-        DENUNCIA denuncia2 = persona1.registrarDenuncia(
+        Denuncia denuncia2 = persona1.registrarDenuncia(
             semaforo3, 
             "Parpadeo constante en todas las luces", 
             "Media", 
@@ -68,7 +68,7 @@ public class Parcial2D_Semaforos {
         System.out.println("  Total denuncias de " + persona1.getNombre() + ": 2");
         
    
-        DENUNCIA denuncia3 = persona2.registrarDenuncia(
+        Denuncia denuncia3 = persona2.registrarDenuncia(
             semaforo1, 
             "Semáforo completamente apagado", 
             "Alta", 
@@ -83,7 +83,7 @@ public class Parcial2D_Semaforos {
         
      
         System.out.println("\n--- ESCENARIO B: Generación de orden de reparación ---");
-        ORDEN_COMPOSICION orden1 = new ORDEN_COMPOSICION(
+        Orden_Composicion orden1 = new Orden_Composicion(
             "OC-001", 
             new Date(), 
             "Reparación completa del sistema Led - Luz roja"
@@ -95,8 +95,8 @@ public class Parcial2D_Semaforos {
         
         
         System.out.println("\n  CREANDO EQUIPOS DE CONTROL...");
-        EQUIPO_CONTROL equipo1 = new EQUIPO_CONTROL("EQ-001", "Eléctrica", "Libre");
-        EQUIPO_CONTROL equipo2 = new EQUIPO_CONTROL("EQ-002", "Mecánica", "Libre");
+        Equipo_Control equipo1 = new Equipo_Control("EQ-001", "Eléctrica", "Libre");
+        Equipo_Control equipo2 = new Equipo_Control("EQ-002", "Mecánica", "Libre");
         
         System.out.println(" Equipo creado: " + equipo1.getCodigo() + " - Especialidad: " + equipo1.getEstado());
         System.out.println(" Equipo creado: " + equipo2.getCodigo() + " - Especialidad: " + equipo2.getEstado());
@@ -109,9 +109,9 @@ public class Parcial2D_Semaforos {
         System.out.println("  Estado del equipo: " + equipo1.getEstado());
         
     
-        List<MIEMBRO> miembros = equipo1.getMiembros();
+        List<Miembro> miembros = equipo1.getMiembros();
         System.out.print("  Estado de miembros: ");
-        for (MIEMBRO miembro : miembros) {
+        for (Miembro miembro : miembros) {
             System.out.print((miembro.isLibre() ? "Libre" : "Ocupado") + " ");
         }
         System.out.println();
@@ -128,7 +128,7 @@ public class Parcial2D_Semaforos {
         
        
         System.out.print("  Estado de miembros después de liberar: ");
-        for (MIEMBRO miembro : miembros) {
+        for (Miembro miembro : miembros) {
             System.out.print((miembro.isLibre() ? "Libre " : "Ocupado ") + " ");
         }
         System.out.println();
@@ -157,7 +157,7 @@ public class Parcial2D_Semaforos {
  
         System.out.println("\n PRUEBA DE ROBUSTEZ - Intento de asignar segunda orden...");
         try {
-            ORDEN_COMPOSICION orden2 = new ORDEN_COMPOSICION(
+            Orden_Composicion orden2 = new Orden_Composicion(
                 "OC-002", 
                 new Date(), 
                 "Orden adicional"

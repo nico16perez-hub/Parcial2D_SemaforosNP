@@ -1,6 +1,6 @@
 package com.mycompany.parcial2d_semaforos;
 
-public class MIEMBRO {
+public class Miembro {
     private String id;
     private String nombre;
     private String puesto;
@@ -8,7 +8,7 @@ public class MIEMBRO {
     private boolean esResponsable;
     private boolean libre;
 
-    public MIEMBRO(String id, String nombre, String puesto, String estado, boolean esResponsable) {
+    public Miembro(String id, String nombre, String puesto, String estado, boolean esResponsable) {
         this.id = id;
         this.nombre = nombre;
         this.puesto = puesto;
@@ -27,27 +27,27 @@ public class MIEMBRO {
         this.estado = libre ? "Libre" : "Ocupado";
     }
 
-    public boolean isLibre() { 
-        return libre; 
+    public boolean isLibre() {
+        return libre;
     }
-    
-    public String getNombre() { 
-        return nombre; 
+
+    public String getNombre() {
+        return nombre;
     }
-    
-    public String getId() { 
-        return id; 
+
+    public String getId() {
+        return id;
     }
-    
-    public String getPuesto() { 
-        return puesto; 
+
+    public String getPuesto() {
+        return puesto;
     }
-    
-    public String getEstado() { 
-        return estado; 
+
+    public String getEstado() {
+        return estado;
     }
-    
-    public boolean esResponsable() { 
-        return esResponsable; 
+
+    public boolean esResponsable() {
+        return esResponsable;
     }
 }
